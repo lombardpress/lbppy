@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: lbppy
+Version: 0.0.0
+Summary: python api for consuming SCTA data
+Home-page: http://github.com/lombardpress/lbppy
+Author: Jeffrey Witt
+Author-email: jeffreycwitt@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
