@@ -11,7 +11,7 @@ class Resource():
     def find(cls, url):
         query_obj = lbppy.Query()
         cls.results = query_obj.query(url)
-        cls.create(cls, url, cls.results)
+        return cls.create(cls, url, cls.results)
     def create(cls, url, results):
         type = ""
         for result in cls.results["results"]["bindings"]:
@@ -28,7 +28,7 @@ class Resource():
         predicates = []
         for result in self.results["results"]["bindings"]:
             if (result["p"]["value"] == predicate):
-                predicates.append(result["o"]["value"])
+                predicates.append(lbppy.ResourceIdentifier(result["o"]["value"]))
 
         if len(predicates) > 1:
             return predicates
@@ -38,7 +38,7 @@ class Resource():
             return "no results found"
 
     def title(self):
-        return self.values("http://purl.org/dc/elements/1.1/title")
+        return self.values("http://purl.org/dc/elements/1.1/title").to_s()
     def description(self):
         return self.values("http://purl.org/dc/elements/1.1/description")
     def has_parts(self):

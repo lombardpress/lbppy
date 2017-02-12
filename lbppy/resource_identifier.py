@@ -5,7 +5,7 @@ class ResourceIdentifier():
         #self.short_id = url.split("resource/").last
 
     def to_s(self):
-        self.url
+        return self.url
 
     def resource(self):
-        lbppy.Resource #need class level method here called "find"
+        return lbppy.Resource.find(self.url) #need class level method here called "find"
