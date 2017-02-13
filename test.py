@@ -1,6 +1,8 @@
 import lbppy
 
-resource = lbppy.Resource.find("http://scta.info/resource/l1-cpspfs/critical/transcription")
+resource = lbppy.Resource.find("http://scta.info/resource/lectio1/critical/transcription")
 
-text = resource.file_part(**{"path": "doc", "partid": "l1-cpspfs"})
-print(text.transcription_type)
+# call for file part with specified kwargs
+#text = resource.file(**{"path": "doc", "partid": "l1-cpspfs"})
+title = resource.file().editor()
+print(title)
