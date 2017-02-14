@@ -46,7 +46,7 @@ It's likely that a collation program will want to use an XSLT script to convert 
 ```
 plaintexts = []
 for t in transcriptions:
-  plaintexts = t.resource().file().transform("https://raw.githubusercontent.com/lombardpress/lombardpress-web/develop/xslt/1.0.0/critical/main_view.xsl")
+  plaintexts = t.resource().file().transform("https://raw.githubusercontent.com/lombardpress/lombardpress-web/master/xslt/1.0.0/critical/plaintext.xsl")
 ```
 
 Simply supply an XSLT file and the conversion will be completed.
