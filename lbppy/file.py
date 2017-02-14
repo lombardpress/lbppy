@@ -45,3 +45,9 @@ class File():
         return editor[0].text
 
 # begin transform methods
+    def transform(self, xslturl):
+        raw = urllib.request.urlopen(xslturl)
+        xsltdoc = etree.parse(raw)
+        xmldoc = self.lxmldoc()
+        result = xmldoc.xslt(xsltdoc)
+        return result
