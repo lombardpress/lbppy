@@ -6,7 +6,7 @@ class Query():
 
     def query(self, url):
         new_url = "<" + url + ">"
-        sparql = SPARQLWrapper("http://sparql-staging.scta.info/ds/query")
+        sparql = SPARQLWrapper("https://sparql-docker.scta.info/ds/query")
         sparql.setQuery("""
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX sctap: <http://scta.info/property/>
